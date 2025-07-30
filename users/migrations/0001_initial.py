@@ -27,7 +27,10 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("password", models.CharField(max_length=128, verbose_name="password")),
+                (
+                    "password",
+                    models.CharField(max_length=128, verbose_name="password"),
+                ),
                 (
                     "last_login",
                     models.DateTimeField(
@@ -73,7 +76,9 @@ class Migration(migrations.Migration):
                     "is_staff",
                     models.BooleanField(
                         default=False,
-                        help_text="Designates whether the user can log into this admin site.",
+                        help_text=(
+                            "Designates whether the user can log into this admin site."
+                        ),
                         verbose_name="staff status",
                     ),
                 ),
@@ -88,16 +93,25 @@ class Migration(migrations.Migration):
                 (
                     "date_joined",
                     models.DateTimeField(
-                        default=django.utils.timezone.now, verbose_name="date joined"
+                        default=django.utils.timezone.now,
+                        verbose_name="date joined",
                     ),
                 ),
                 ("email", models.EmailField(max_length=254, unique=True)),
                 (
                     "avatar",
-                    models.ImageField(blank=True, null=True, upload_to="avatars/"),
+                    models.ImageField(
+                        blank=True, null=True, upload_to="avatars/"
+                    ),
                 ),
-                ("phone", models.CharField(blank=True, max_length=20, null=True)),
-                ("country", models.CharField(blank=True, max_length=100, null=True)),
+                (
+                    "phone",
+                    models.CharField(blank=True, max_length=20, null=True),
+                ),
+                (
+                    "country",
+                    models.CharField(blank=True, max_length=100, null=True),
+                ),
                 (
                     "groups",
                     models.ManyToManyField(

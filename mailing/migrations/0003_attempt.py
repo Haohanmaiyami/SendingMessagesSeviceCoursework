@@ -27,7 +27,10 @@ class Migration(migrations.Migration):
                 (
                     "status",
                     models.CharField(
-                        choices=[("Успешно", "Успешно"), ("Не успешно", "Не успешно")],
+                        choices=[
+                            ("Успешно", "Успешно"),
+                            ("Не успешно", "Не успешно"),
+                        ],
                         max_length=20,
                     ),
                 ),

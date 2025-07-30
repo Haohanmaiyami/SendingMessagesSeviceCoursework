@@ -19,7 +19,8 @@ class Migration(migrations.Migration):
             model_name="client",
             name="owner",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AddField(
@@ -31,28 +32,32 @@ class Migration(migrations.Migration):
             model_name="mailing",
             name="owner",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AddField(
             model_name="mailinglog",
             name="mailing",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="mailing.mailing"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="mailing.mailing",
             ),
         ),
         migrations.AddField(
             model_name="message",
             name="owner",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+                on_delete=django.db.models.deletion.CASCADE,
+                to=settings.AUTH_USER_MODEL,
             ),
         ),
         migrations.AddField(
             model_name="mailing",
             name="message",
             field=models.ForeignKey(
-                on_delete=django.db.models.deletion.CASCADE, to="mailing.message"
+                on_delete=django.db.models.deletion.CASCADE,
+                to="mailing.message",
             ),
         ),
     ]

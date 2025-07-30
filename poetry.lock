@@ -307,6 +307,17 @@ dev = ["build", "hatch"]
 doc = ["sphinx"]
 
 [[package]]
+name = "tokens"
+version = "0.0.3"
+description = "tokens is a Python Package created for simply scraping discord account data with the use of an account token."
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "tokens-0.0.3.tar.gz", hash = "sha256:2bea467603cf36f6affbdf8f923b9d90aeaa69b5b812b0bbee1922eb05dd9b49"},
+]
+
+[[package]]
 name = "tzdata"
 version = "2025.2"
 description = "Provider of IANA time zone data"
@@ -322,4 +333,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.13"
-content-hash = "00c083480817ad77d564a7b1786e83c74d62b047cdad6ac3e6b88a8ce62afc60"
+content-hash = "807ab3c0e90c34e86ce114216bed14b21584d3ba2481a58b6e52797fa59bf9ed"

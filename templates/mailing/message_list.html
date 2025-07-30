@@ -1,20 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Список рассылок</h1>
+  <h1>Список сообщений</h1>
+  <p><a href="{% url 'mailing:message_create' %}">Создать новое сообщение</a></p>
 
-  {% if object_list %}
+  {% if messages %}
     <ul>
-      {% for mailing in object_list %}
+      {% for message in messages %}
         <li>
-          {{ mailing }} (ID: {{ mailing.id }}) —
-          <a href="{% url 'mailing:update' mailing.id %}">Изменить</a> |
-          <a href="{% url 'mailing:delete' mailing.id %}">Удалить</a> |
-          <a href="{% url 'mailing:send' mailing.id %}">Отправить</a>
+          {{ message.subject }} — {{ message.body|truncatechars:50 }}
+          <a href="{% url 'mailing:message_update' message.id %}">Изменить</a> |
+          <a href="{% url 'mailing:message_delete' message.id %}">Удалить</a>
         </li>
       {% endfor %}
     </ul>
   {% else %}
-    <p>Пока нет рассылок.</p>
+    <p>Пока нет сообщений.</p>
   {% endif %}
 {% endblock %}
